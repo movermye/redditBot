@@ -17,6 +17,8 @@ def bot_action(c, verbose=True, respond=False):
 
 import praw
 import OAuth2Util
+import time 
+
 r = praw.Reddit('basic call response bot example by SkylineBilly')
 o = OAuth2Util.OAuth2Util(r, print_log=True)
 o.refresh(force=True)
@@ -28,3 +30,7 @@ for c in praw.helpers.comment_stream(r, targetSubreddit):
         # set 'respond=True' to activate bot responses. Must be logged in.
         print "deploying bot action"
         bot_action(c, respond=True)
+	#time.sleep(10)
+	return
+
+print "found one, all done"
